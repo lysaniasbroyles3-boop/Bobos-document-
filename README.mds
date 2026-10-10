@@ -1,0 +1,57 @@
+# BOBOS OS — Python Edition
+
+BOBOS is a browser-based workspace powered by Python,
+Flask, HTML, CSS, and JavaScript.
+
+## Features
+
+- BobAI demo assistant
+- BobBible daily study and levels
+- BobTrade virtual stock trading
+- BobCode project editor and HTML preview
+- BobShop demo storefront
+- BobBusiness profit calculator
+- BobFiles notes
+- Bob3D and BobPCB starter sections
+- Export workspace data
+- Credits counter
+
+## Installation
+
+Install the packages:
+
+    pip install -r requirements.txt
+
+Start BOBOS:
+
+    python app.py
+
+Open the local address provided by Flask or your hosting
+service.
+
+## Project Structure
+
+    BOBOS/
+    ├── app.py
+    ├── requirements.txt
+    ├── README.md
+    ├── bobos_data.json
+    ├── templates/
+    │   └── index.html
+    └── static/
+        ├── style.css
+        └── app.js
+
+The JSON data file is created when data is first saved.
+
+## Important
+
+This is a starter application. The AI responses are a demo,
+stock prices are manually entered practice prices, and the
+shop does not process payments.
+
+Live AI, real-time market data, full Bible search, secure
+accounts, and messaging require additional services.
+
+Do not use this prototype to store passwords, payment
+secrets, or sensitive customer information.
