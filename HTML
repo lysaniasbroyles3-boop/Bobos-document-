@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOBOS OS</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">B</div>
+            <div>
+                <strong>BOBOS</strong>
+                <small>PYTHON EDITION</small>
+            </div>
+        </div>
+
+        <p class="nav-label">WORKSPACE</p>
+
+        <button class="nav active" data-page="home">⌂ Dashboard</button>
+        <button class="nav" data-page="ai">✦ BobAI</button>
+        <button class="nav" data-page="bible">✧ BobBible</button>
+        <button class="nav" data-page="trade">↗ BobTrade</button>
+        <button class="nav" data-page="code">⌘ BobCode Studio</button>
+        <button class="nav" data-page="shop">▦ BobShop</button>
+        <button class="nav" data-page="business">◈ BobBusiness</button>
+        <button class="nav" data-page="files">▤ BobFiles & Notes</button>
+        <button class="nav" data-page="lab">◇ Bob3D + BobPCB</button>
+
+        <div class="sidebar-bottom">
+            <span class="status-dot"></span> Local demo workspace
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">YOUR DIGITAL WORKSPACE</span>
+                <h1 id="page-title">Dashboard</h1>
+            </div>
+            <div class="top-actions">
+                <span class="credits">✦ <b id="credits">100</b> credits</span>
+                <div class="avatar">B</div>
+            </div>
+        </header>
+
+        <section class="page active" id="page-home">
+            <div class="hero">
+                <div>
+                    <span class="pill">PYTHON POWERED · BUILD 0.1</span>
+                    <h2>Build something<br><em>brilliant.</em></h2>
+                    <p>
+                        Your workspace for ideas, code, learning,
+                        business, and experiments.
+                    </p>
+                    <button class="primary" data-go="ai">
+                        Open BobAI ↗
+                    </button>
+                </div>
+                <div class="orb">
+                    <div class="orb-inner">B</div>
+                    <span class="orb-caption">BOBOS CORE</span>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <span>STUDY LEVEL</span>
+                    <strong id="level">1</strong>
+                    <small>BobBible progress</small>
+                </div>
+                <div class="stat">
+                    <span>VIRTUAL CASH</span>
+                    <strong id="cash">$10,000</strong>
+                    <small>Practice portfolio</small>
+                </div>
+                <div class="stat">
+                    <span>SAVED PROJECTS</span>
+                    <strong id="project-count">0</strong>
+                    <small>BobCode Studio</small>
+                </div>
+                <div class="stat">
+                    <span>NOTES</span>
+                    <strong id="note-count">0</strong>
+                    <small>Ideas captured</small>
+                </div>
+            </div>
+
+            <div class="section-head">
+                <div>
+                    <span class="eyebrow">QUICK ACCESS</span>
+                    <h2>Launch a workspace</h2>
+                </div>
+            </div>
+
+            <div class="launch-grid">
+                <button class="launch-card" data-go="ai">
+                    <span class="launch-icon purple">✦</span>
+                    <b>BobAI</b>
+                    <small>Ask, plan, and explore</small>
+                </button>
+                <button class="launch-card" data-go="bible">
+                    <span class="launch-icon gold">✧</span>
+                    <b>BobBible</b>
+                    <small>Verse and daily lesson</small>
+                </button>
+                <button class="launch-card" data-go="trade">
+                    <span class="launch-icon green">↗</span>
+                    <b>BobTrade</b>
+                    <small>Practice trading</small>
+                </button>
+                <button class="launch-card" data-go="code">
+                    <span class="launch-icon blue">⌘</span>
+                    <b>BobCode</b>
+                    <small>Create and save code</small>
+                </button>
+            </div>
+
+            <div class="notice">
+                <span>ⓘ</span>
+                <div>
+                    <b>Welcome to BOBOS</b>
+                    <p>
+                        Explore the workspaces using the buttons.
+                        Some advanced features need external services.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-ai">
+            <div class="panel">
+                <span class="eyebrow">BOBOS INTELLIGENCE</span>
+                <h2>Talk to BobAI</h2>
+                <div class="chat" id="chat">
+                    <div class="bubble bot">
+                        Hey! I'm BobAI's demo. Ask me about coding,
+                        Bible study, stocks, business, or BOBOS.
+                    </div>
+                </div>
+                <form id="ai-form" class="composer">
+                    <input id="ai-input" placeholder="Ask BobAI something..."
+                           autocomplete="off" required>
+                    <button class="primary">Send ↗</button>
+                </form>
+                <p class="hint">
+                    This starter uses demo responses. A connected AI
+                    service is needed for full AI conversations.
+                </p>
+            </div>
+        </section>
+
+        <section class="page" id="page-bible">
+            <div class="two-col">
+                <div class="panel">
+                    <span class="eyebrow">TODAY'S READING</span>
+                    <h2>Be strong and courageous</h2>
+                    <blockquote>
+                        “Be strong and courageous. Do not be afraid;
+                        do not be discouraged, for the Lord your God
+                        will be with you wherever you go.”
+                    </blockquote>
+                    <p class="reference">Joshua 1:9 · NIV excerpt</p>
+
+                    <div class="divider"></div>
+                    <h3>Think about it</h3>
+                    <p>What is one way you could practice courage today?</p>
+                    <textarea id="reflection"
+                              placeholder="Write your reflection..."></textarea>
+                    <button id="complete-study" class="primary full">
+                        Complete Study + Level Up
+                    </button>
+                    <p id="study-message" class="hint">
+                        Complete today's lesson to earn a level.
+                    </p>
+                </div>
+
+                <div class="panel">
+                    <span class="eyebrow">QUICK VERSE LOOKUP</span>
+                    <h2>Find a passage</h2>
+                    <p class="muted">
+                        This demo contains one sample passage.
+                        Full Bible lookup requires a connected text source.
+                    </p>
+                    <div class="form-stack">
+                        <label>Book
+                            <input id="book" placeholder="e.g. Joshua">
+                        </label>
+                        <div class="split">
+                            <label>Chapter
+                                <input id="chapter" type="number"
+                                       min="1" placeholder="1">
+                            </label>
+                            <label>Verse
+                                <input id="verse" type="number"
+                                       min="1" placeholder="9">
+                            </label>
+                        </div>
+                        <button id="lookup-verse" class="secondary">
+                            Look up sample passage
+                        </button>
+                        <div id="verse-result" class="result-box">
+                            Your verse will appear here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-trade">
+            <div class="trade-grid">
+                <div class="panel">
+                    <span class="eyebrow">PAPER TRADING</span>
+                    <h2>Trade simulator</h2>
+                    <p class="muted">
+                        Virtual money only. Enter your own practice price;
+                        these are not live market quotes.
+                    </p>
+                    <form id="trade-form" class="form-stack">
+                        <label>Stock symbol
+                            <input id="symbol" value="DEMO" required>
+                        </label>
+                        <div class="split">
+                            <label>Quantity
+                                <input id="quantity" type="number"
+                                       min="1" value="1" required>
+                            </label>
+                            <label>Practice price ($)
+                                <input id="price" type="number"
+                                       min="0.01" step="0.01"
+                                       value="25" required>
+                            </label>
+                        </div>
+                        <div class="split">
+                            <button class="primary" type="button" id="buy">
+                                Buy shares
+                            </button>
+                            <button class="secondary" type="button" id="sell">
+                                Sell shares
+                            </button>
+                        </div>
+                        <p id="trade-message" class="hint"></p>
+                    </form>
+                </div>
+
+                <div class="panel">
+                    <span class="eyebrow">SIMULATED PORTFOLIO</span>
+                    <h2 id="portfolio-cash">$10,000.00</h2>
+                    <div id="portfolio" class="portfolio-list"></div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <span class="eyebrow">RECENT ACTIVITY</span>
+                <h2>Transactions</h2>
+                <div id="transactions" class="table-wrap">
+                    No trades yet.
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-code">
+            <div class="panel">
+                <span class="eyebrow">DEVELOPMENT WORKSPACE</span>
+                <h2>BobCode Studio</h2>
+
+                <form id="project-form" class="form-stack">
+                    <label>Project name
+                        <input id="project-name"
+                               placeholder="My first website" required>
+                    </label>
+                    <label>Project code
+                        <textarea id="project-code" class="code-editor"
+                                  spellcheck="false"><h1>Hello from BOBOS!</h1>
+<p>My first project.</p></textarea>
+                    </label>
+                    <div class="split">
+                        <button class="primary">Save project</button>
+                        <button class="secondary" type="button"
+                                id="preview-code">Preview HTML</button>
+                    </div>
+                </form>
+
+                <div id="code-preview" class="preview-box">
+                    Your HTML preview appears here.
+                </div>
+
+                <h3>Saved projects</h3>
+                <div id="projects-list" class="item-list"></div>
+            </div>
+        </section>
+
+        <section class="page" id="page-shop">
+            <div class="section-head">
+                <h2>BobShop</h2>
+                <span class="live-tag">DEMO CATALOG</span>
+            </div>
+            <div class="launch-grid" id="products"></div>
+            <div class="notice">
+                <span>ⓘ</span>
+                <div>
+                    <b>Demo storefront</b>
+                    <p>Real orders and payments are not connected.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-business">
+            <div class="two-col">
+                <div class="panel">
+                    <span class="eyebrow">BUSINESS TOOLKIT</span>
+                    <h2>Calculate profit</h2>
+                    <div class="form-stack">
+                        <label>Product or service
+                            <input id="biz-product"
+                                   placeholder="Handmade bookmarks">
+                        </label>
+                        <div class="split">
+                            <label>Cost per item ($)
+                                <input id="biz-cost" type="number"
+                                       min="0" step=".01" value="1">
+                            </label>
+                            <label>Selling price ($)
+                                <input id="biz-price" type="number"
+                                       min="0" step=".01" value="2">
+                            </label>
+                        </div>
+                        <button id="calculate-profit" class="primary">
+                            Calculate profit
+                        </button>
+                        <div id="profit-result" class="result-box">
+                            Enter your costs and price.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <span class="eyebrow">GROWTH CHECKLIST</span>
+                    <h2>Before you launch</h2>
+                    <div class="checklist">
+                        <label><input type="checkbox"> Know your costs</label>
+                        <label><input type="checkbox"> Choose a clear price</label>
+                        <label><input type="checkbox"> Track sales</label>
+                        <label><input type="checkbox"> Get permission to sell</label>
+                        <label><input type="checkbox"> Protect customer data</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-files">
+            <div class="two-col">
+                <div class="panel">
+                    <span class="eyebrow">IDEA VAULT</span>
+                    <h2>BobFiles & Notes</h2>
+                    <form id="note-form" class="form-stack">
+                        <label>New note
+                            <textarea id="note-text"
+                                      placeholder="Capture an idea..."
+                                      required></textarea>
+                        </label>
+                        <button class="primary">Save note</button>
+                    </form>
+                </div>
+                <div class="panel">
+                    <span class="eyebrow">SAVED LOCALLY</span>
+                    <h2>Your notes</h2>
+                    <div id="notes-list" class="item-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" id="page-lab">
+            <div class="section-head">
+                <h2>Creative Labs</h2>
+            </div>
+            <div class="launch-grid">
+                <div class="launch-card">
+                    <span class="launch-icon blue">◇</span>
+                    <b>Bob3D</b>
+                    <small>Future 3D scene editor and shape tools.</small>
+                </div>
+                <div class="launch-card">
+                    <span class="launch-icon green">⌁</span>
+                    <b>BobPCB</b>
+                    <small>Future circuit and board design tools.</small>
+                </div>
+                <div class="launch-card">
+                    <span class="launch-icon gold">◎</span>
+                    <b>BobNet</b>
+                    <small>Future secure messaging and sharing.</small>
+                </div>
+                <div class="launch-card">
+                    <span class="launch-icon purple">▤</span>
+                    <b>BobDownloads</b>
+                    <small>Export your workspace data.</small>
+                    <button class="secondary" id="export-data">
+                        Export workspace JSON
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer>BOBOS OS · PYTHON EDITION · BUILD YOUR IDEAS</footer>
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
